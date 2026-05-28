@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOKMOS Engenharia Civil - Projetos e Infraestrutura</title>
+    <meta name="description" content="DOKMOS é uma empresa especializada em engenharia civil, com foco em desenvolvimento de projetos inovadores e execução de obras com excelência técnica.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ativos/fonts/dokmos/dokmos-fonts.css">
+    <link rel="icon" type="image/svg+xml" href="rebrand-dokmos/logos/dokmos-icon.svg">
+    <style>
+        :root{--dokmos-primary:#286875;--dokmos-primary-light:#3d8a99;--dokmos-white:#FFFFFF;--dokmos-dark:#1a4a55;--dokmos-gray:#f5f5f5;--dokmos-text:#333333}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html,body{font-family:'Dokmos','Montserrat','Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--dokmos-text);line-height:1.6;overflow-x:hidden}
+        .o-loader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--dokmos-white);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.6s ease,visibility 0.6s ease}
+        .o-loader.is-hidden{opacity:0;visibility:hidden}
+        .o-loader__logo svg{width:280px;height:80px}
+        .o-loader__logo path{fill:var(--dokmos-primary);opacity:0;transform:translateY(20px);animation:loaderEnter 0.8s cubic-bezier(0.16,1,0.3,1) forwards}
+        .o-loader__logo path:nth-child(1){animation-delay:0.35s}.o-loader__logo path:nth-child(2){animation-delay:0.28s}.o-loader__logo path:nth-child(3){animation-delay:0.21s}.o-loader__logo path:nth-child(4){animation-delay:0.14s}.o-loader__logo path:nth-child(5){animation-delay:0.07s}.o-loader__logo path:nth-child(6){animation-delay:0s}
+        @keyframes loaderEnter{to{opacity:1;transform:translateY(0)}}
+        .o-header{position:fixed;top:0;left:0;width:100%;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);transition:transform 0.3s ease}
+        .o-header.is-scrolled{transform:translateY(-100%)}
+        .o-header__logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--dokmos-primary)}
+        .o-header__logo svg{width:48px;height:48px}
+        .o-header__logo span{font-size:1.5rem;font-weight:600;letter-spacing:0.1em}
+        .o-nav{display:flex;gap:2rem}
+        .o-nav a{text-decoration:none;color:var(--dokmos-text);font-weight:500;font-size:0.95rem;transition:color 0.3s ease;position:relative}
+        .o-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--dokmos-primary);transition:width 0.3s ease}
+        .o-nav a:hover{color:var(--dokmos-primary)}.o-nav a:hover::after{width:100%}
+        .o-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;background:linear-gradient(135deg,var(--dokmos-gray) 0%,#e8f4f6 100%);position:relative;overflow:hidden}
+        .o-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:80%;height:150%;background:linear-gradient(135deg,rgba(40,104,117,0.08) 0%,rgba(61,138,153,0.05) 100%);transform:rotate(15deg)}
+        .o-hero__content{max-width:900px;position:relative;z-index:1}
+        .o-hero__subtitle{font-size:1.1rem;color:var(--dokmos-primary);font-weight:500;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeInUp 0.8s ease forwards 0.5s}
+        .o-hero__title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--dokmos-dark);line-height:1.1;margin-bottom:1.5rem;opacity:0;animation:fadeInUp 0.8s ease forwards 0.7s}
+        .o-hero__description{font-size:1.25rem;color:#666;max-width:650px;margin:0 auto 2.5rem;opacity:0;animation:fadeInUp 0.8s ease forwards 0.9s}
+        .o-hero__cta{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2.5rem;background:var(--dokmos-primary);color:var(--dokmos-white);text-decoration:none;font-weight:600;font-size:1rem;border-radius:50px;transition:all 0.3s ease;opacity:0;animation:fadeInUp 0.8s ease forwards 1.1s}
+        .o-hero__cta:hover{background:var(--dokmos-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(40,104,117,0.3)}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .o-specialties{padding:6rem 2rem;background:var(--dokmos-white)}
+        .o-section-title{text-align:center;margin-bottom:4rem}
+        .o-section-title__subtitle{font-size:1rem;color:var(--dokmos-primary);font-weight:500;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem}
+        .o-section-title__title{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--dokmos-dark)}
+        .o-specialties__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+        .o-specialty-card{padding:2.5rem;background:var(--dokmos-gray);border-radius:16px;transition:all 0.3s ease;cursor:pointer}
+        .o-specialty-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(40,104,117,0.15);background:var(--dokmos-white)}
+        .o-specialty-card__icon{width:60px;height:60px;margin-bottom:1.5rem;color:var(--dokmos-primary)}
+        .o-specialty-card__title{font-size:1.35rem;font-weight:600;color:var(--dokmos-dark);margin-bottom:1rem}
+        .o-specialty-card__description{color:#666;line-height:1.7}
+        .o-footer{background:var(--dokmos-dark);color:var(--dokmos-white);padding:4rem 2rem 2rem}
+        .o-footer__content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:3rem;margin-bottom:3rem}
+        .o-footer__brand .o-header__logo{color:var(--dokmos-white);margin-bottom:1rem}
+        .o-footer__brand p{color:rgba(255,255,255,0.7);line-height:1.7}
+        .o-footer__links h4{font-size:1.1rem;margin-bottom:1.5rem;color:var(--dokmos-white)}
+        .o-footer__links ul{list-style:none}
+        .o-footer__links li{margin-bottom:0.75rem}
+        .o-footer__links a{color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.3s ease}
+        .o-footer__links a:hover{color:var(--dokmos-white)}
+        .o-footer__bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:0.9rem}
+        @media(max-width:768px){.o-header{padding:1rem 1.5rem}.o-nav{display:none}.o-hero{padding:6rem 1.5rem 3rem}.o-specialties{padding:4rem 1.5rem}}
+    </style>
+</head>
+<body>
+    <div class="o-loader" id="loader">
+        <div class="o-loader__logo">
+            <svg viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 10 H35 C45 10 50 18 50 30 V50 C50 62 45 70 35 70 H20 V10 Z M30 60 C35 60 38 55 38 45 V35 C38 25 35 20 30 20 H30 V60 Z"/>
+                <path d="M70 35 C70 20 78 10 90 10 C102 10 110 20 110 35 V45 C110 60 102 70 90 70 C78 70 70 60 70 45 V35 Z M90 60 C96 60 100 53 100 45 V35 C100 27 96 20 90 20 C84 20 80 27 80 35 V45 C80 53 84 60 90 60 Z"/>
+                <path d="M130 10 H142 V35 L165 10 H180 L155 38 L182 70 H165 L142 42 V70 H130 V10 Z"/>
+                <path d="M200 10 H215 L230 45 L245 10 H260 V70 H248 V35 L230 55 L212 35 V70 H200 V10 Z"/>
+                <path d="M280 35 C280 20 288 10 300 10 C312 10 320 20 320 35 V45 C320 60 312 70 300 70 C288 70 280 60 280 45 V35 Z M300 60 C306 60 310 53 310 45 V35 C310 27 306 20 300 20 C294 20 290 27 290 35 V45 C290 53 294 60 300 60 Z"/>
+                <path d="M350 15 C350 8 355 5 365 5 C375 5 380 10 380 18 C380 28 370 32 360 36 C350 40 345 45 345 55 C345 65 352 70 365 70 C378 70 385 65 387 55 L375 53 C373 58 370 60 365 60 C360 60 358 58 358 55 C358 50 363 47 372 44 C382 40 390 33 390 20 C390 8 380 0 365 0 C350 0 340 8 338 18 L350 15 Z"/>
+            </svg>
+        </div>
+    </div>
+    <header class="o-header" id="header">
+        <a href="/" class="o-header__logo">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+                <rect x="20" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+                <rect x="34" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+            </svg>
+            <span>DOKMOS</span>
+        </a>
+        <nav class="o-nav">
+            <a href="#especialidades">Especialidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    <section class="o-hero">
+        <div class="o-hero__content">
+            <p class="o-hero__subtitle">Engenharia Civil</p>
+            <h1 class="o-hero__title">Construindo o Futuro com Excelência Técnica</h1>
+            <p class="o-hero__description">A DOKMOS é especializada em desenvolvimento de projetos inovadores e execução de obras com excelência. Combinamos experiência e tecnologia para entregar soluções completas em infraestrutura e edificações.</p>
+            <a href="#contato" class="o-hero__cta">Solicitar Orçamento<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+    </section>
+    <section class="o-specialties" id="especialidades">
+        <div class="o-section-title">
+            <p class="o-section-title__subtitle">Nossas Especialidades</p>
+            <h2 class="o-section-title__title">Soluções Completas em Engenharia</h2>
+        </div>
+        <div class="o-specialties__grid">
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 50 L10 20 L30 10 L50 20 L50 50"/><path d="M10 30 L30 40 L50 30"/><path d="M30 10 L30 40"/></svg>
+                <h3 class="o-specialty-card__title">Projetos Estruturais</h3>
+                <p class="o-specialty-card__description">Desenvolvimento de projetos estruturais completos para edificações residenciais, comerciais e industriais com otimização de materiais.</p>
+            </div>
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 45 L55 45"/><path d="M15 45 L15 25 L25 25 L25 45"/><path d="M35 45 L35 15 L45 15 L45 45"/><circle cx="30" cy="10" r="5"/></svg>
+                <h3 class="o-specialty-card__title">Infraestrutura Urbana</h3>
+                <p class="o-specialty-card__description">Projetos de infraestrutura para desenvolvimento urbano, incluindo pavimentação, drenagem e sistemas de utilidades.</p>
+            </div>
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="15" width="40" height="35" rx="3"/><path d="M20 25 L40 25"/><path d="M20 35 L40 35"/><path d="M30 5 L30 15"/></svg>
+                <h3 class="o-specialty-card__title">Gestão de Obras</h3>
+                <p class="o-specialty-card__description">Gerenciamento completo de obras com planejamento, fiscalização e controle de qualidade, prazo e orçamento.</p>
+            </div>
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><circle cx="30" cy="30" r="20"/><path d="M30 15 L30 30 L40 35"/><path d="M30 10 L30 5"/><path d="M30 55 L30 50"/></svg>
+                <h3 class="o-specialty-card__title">Consultoria Técnica</h3>
+                <p class="o-specialty-card__description">Assessoria técnica especializada para análise de projetos, viabilidade e otimização de processos construtivos.</p>
+            </div>
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 50 L10 20 L30 10 L50 20 L50 50"/><path d="M25 50 L25 30"/><path d="M35 50 L35 30"/><circle cx="30" cy="20" r="5"/></svg>
+                <h3 class="o-specialty-card__title">Regularização de Imóveis</h3>
+                <p class="o-specialty-card__description">Regularização de imóveis junto aos órgãos públicos, incluindo averbações, desmembramentos e atualizações cadastrais.</p>
+            </div>
+            <div class="o-specialty-card">
+                <svg class="o-specialty-card__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2"><rect x="15" y="20" width="30" height="25" rx="2"/><path d="M25 20 L25 15 L35 15 L35 20"/><path d="M20 30 L40 30"/><path d="M20 38 L35 38"/></svg>
+                <h3 class="o-specialty-card__title">Laudos e Perícias</h3>
+                <p class="o-specialty-card__description">Elaboração de laudos técnicos, perícias judiciais e avaliações de imóveis com rigor técnico e fundamentação científica.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="o-footer" id="contato">
+        <div class="o-footer__content">
+            <div class="o-footer__brand">
+                <a href="/" class="o-header__logo">
+                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+                        <rect x="20" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+                        <rect x="34" y="8" width="8" height="32" rx="4" fill="currentColor"/>
+                    </svg>
+                    <span>DOKMOS</span>
+                </a>
+                <p>Empresa especializada em engenharia civil, comprometida com a excelência técnica e inovação em cada projeto.</p>
+            </div>
+            <div class="o-footer__links">
+                <h4>Navegação</h4>
+                <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#sobre">Sobre Nós</a></li><li><a href="#contato">Contato</a></li></ul>
+            </div>
+            <div class="o-footer__links">
+                <h4>Serviços</h4>
+                <ul><li><a href="#">Projetos Estruturais</a></li><li><a href="#">Infraestrutura</a></li><li><a href="#">Gestão de Obras</a></li><li><a href="#">Consultoria</a></li></ul>
+            </div>
+            <div class="o-footer__links">
+                <h4>Contato</h4>
+                <ul><li><a href="mailto:contato@dokmos.com.br">contato@dokmos.com.br</a></li><li><a href="tel:+5511999999999">(11) 99999-9999</a></li><li>São Paulo - SP</li></ul>
+            </div>
+        </div>
+        <div class="o-footer__bottom"><p>&copy; 2024 DOKMOS Engenharia Civil. Todos os direitos reservados.</p></div>
+    </footer>
+    <script>
+        window.addEventListener('load',()=>{const loader=document.getElementById('loader');setTimeout(()=>{loader.classList.add('is-hidden');setTimeout(()=>{loader.style.display='none'},600)},1200)});
+        let lastScrollY=window.scrollY;const header=document.getElementById('header');
+        window.addEventListener('scroll',()=>{if(window.scrollY>100){if(window.scrollY>lastScrollY){header.classList.add('is-scrolled')}else{header.classList.remove('is-scrolled')}}else{header.classList.remove('is-scrolled')}lastScrollY=window.scrollY});
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+    </script>
+</body>
+</html>
