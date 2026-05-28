@@ -1,0 +1,24 @@
+<!-- DOKMOS Logo SVG - Versão Branca (para fundos escuros) -->
+<!-- Design: Barras verticais arredondadas minimalistas -->
+<!-- Cor: Branco #FFFFFF para contraste em fundos escuros -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120" aria-labelledby="dokmosLogoWhiteTitle">
+  <title id="dokmosLogoWhiteTitle">DOKMOS Logo White</title>
+  
+  <!-- Símbolo: 4 barras verticais arredondadas interleaved -->
+  <g transform="translate(20, 15)">
+    <!-- Barra 1 -->
+    <rect x="0" y="0" width="14" height="90" rx="7" ry="7" fill="#FFFFFF"/>
+    <!-- Barra 2 (mais alta) -->
+    <rect x="22" y="-10" width="14" height="110" rx="7" ry="7" fill="#FFFFFF"/>
+    <!-- Barra 3 (mais alta) -->
+    <rect x="44" y="-10" width="14" height="110" rx="7" ry="7" fill="#FFFFFF"/>
+    <!-- Barra 4 -->
+    <rect x="66" y="0" width="14" height="90" rx="7" ry="7" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Texto DOKMOS - Tipografia geométrica forte -->
+  <text x="110" y="75" font-family="'Montserrat', 'Outfit', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="52" font-weight="700" letter-spacing="4" fill="#FFFFFF" 
+        style="text-transform: uppercase;">DOKMOS</text>
+</svg>

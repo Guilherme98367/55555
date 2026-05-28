@@ -1,0 +1,39 @@
+<!-- DOKMOS Logo SVG - Vetorial Premium -->
+<!-- Design: Barras verticais arredondadas minimalistas (conceito WM/DOKMOS) -->
+<!-- Cores: Teal #286875 (primary) e Branco #FFFFFF (secondary) -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120" aria-labelledby="dokmosLogoTitle">
+  <title id="dokmosLogoTitle">DOKMOS Logo</title>
+  <defs>
+    <!-- Gradiente premium para profundidade sutil -->
+    <linearGradient id="dokmosGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra suave para versão clara -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Símbolo: 4 barras verticais arredondadas interleaved (estilo WM minimalista) -->
+  <g transform="translate(20, 15)" filter="url(#softShadow)">
+    <!-- Barra 1 -->
+    <rect x="0" y="0" width="14" height="90" rx="7" ry="7" fill="url(#dokmosGradient)"/>
+    <!-- Barra 2 (mais alta, interleaved) -->
+    <rect x="22" y="-10" width="14" height="110" rx="7" ry="7" fill="url(#dokmosGradient)"/>
+    <!-- Barra 3 (mais alta, interleaved) -->
+    <rect x="44" y="-10" width="14" height="110" rx="7" ry="7" fill="url(#dokmosGradient)"/>
+    <!-- Barra 4 -->
+    <rect x="66" y="0" width="14" height="90" rx="7" ry="7" fill="url(#dokmosGradient)"/>
+  </g>
+  
+  <!-- Texto DOKMOS - Tipografia geométrica forte e legível -->
+  <text x="110" y="75" font-family="'Montserrat', 'Outfit', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="52" font-weight="700" letter-spacing="4" fill="#286875" 
+        style="text-transform: uppercase;">DOKMOS</text>
+  
+  <!-- Tagline opcional (comentada) -->
+  <!-- <text x="112" y="95" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="2" fill="#666666">DIGITAL EXPERIENCES</text> -->
+</svg>

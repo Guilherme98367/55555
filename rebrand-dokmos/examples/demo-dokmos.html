@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOKMOS - Digital Experiences</title>
+  <meta name="description" content="DOKMOS - Agência digital especializada em experiências digitais premium">
+  
+  <!-- DOKMOS Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* DOKMOS Font Face */
+    @font-face {
+      font-family: 'Dokmos';
+      src: url('fonts/dokmos/regular/dokmos-Regular.woff2') format('woff2'),
+           url('fonts/dokmos/regular/dokmos-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Dokmos';
+      src: url('fonts/dokmos/medium/dokmos-Medium.woff2') format('woff2'),
+           url('fonts/dokmos/medium/dokmos-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    :root {
+      --dokmos-primary: #286875;
+      --dokmos-primary-light: #3d8a99;
+      --dokmos-white: #FFFFFF;
+      --dokmos-dark: #1a4a55;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Dokmos', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Loader Animation - DOKMOS */
+    .o-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dokmos-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 0.8s ease forwards;
+      animation-delay: 2.5s;
+    }
+    
+    .o-loader__logo svg {
+      width: 400px;
+      height: 120px;
+    }
+    
+    .o-loader__logo path {
+      opacity: 0;
+      animation: drawLetter 0.6s ease forwards;
+    }
+    
+    .o-loader__logo path:nth-child(1) { animation-delay: 0s; }
+    .o-loader__logo path:nth-child(2) { animation-delay: 0.07s; }
+    .o-loader__logo path:nth-child(3) { animation-delay: 0.14s; }
+    .o-loader__logo path:nth-child(4) { animation-delay: 0.21s; }
+    .o-loader__logo path:nth-child(5) { animation-delay: 0.28s; }
+    .o-loader__logo path:nth-child(6) { animation-delay: 0.35s; }
+    
+    @keyframes drawLetter {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 0.9;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    
+    /* Header */
+    header {
+      background: var(--dokmos-white);
+      padding: 2rem 4rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .logo svg {
+      height: 50px;
+      width: auto;
+    }
+    
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dokmos-primary);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--dokmos-primary);
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    
+    .brand-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .brand-card {
+      background: var(--dokmos-white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    
+    .brand-card h3 {
+      color: var(--dokmos-primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    
+    .brand-card svg {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    footer {
+      background: var(--dokmos-primary);
+      color: var(--dokmos-white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+    
+    footer p {
+      color: var(--dokmos-white);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader Animation -->
+  <div class="o-loader">
+    <div class="o-loader__logo">
+      <svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <!-- D -->
+        <path d="M 30,20 L 70,20 C 90,20 100,35 100,60 C 100,85 90,100 70,100 L 30,100 Z M 45,35 L 45,85 L 70,85 C 80,85 85,75 85,60 C 85,45 80,35 70,35 Z" fill="url(#loaderGrad)"/>
+        <!-- O -->
+        <path d="M 130,60 C 130,35 145,20 170,20 C 195,20 210,35 210,60 C 210,85 195,100 170,100 C 145,100 130,85 130,60 Z M 145,60 C 145,75 155,85 170,85 C 185,85 195,75 195,60 C 195,45 185,35 170,35 C 155,35 145,45 145,60 Z" fill="url(#loaderGrad)"/>
+        <!-- K -->
+        <path d="M 240,20 L 255,20 L 255,50 L 285,20 L 310,20 L 270,60 L 310,100 L 285,100 L 255,70 L 255,100 L 240,100 Z" fill="url(#loaderGrad)"/>
+        <!-- M -->
+        <path d="M 340,20 L 355,20 L 370,50 L 385,20 L 400,20 L 400,100 L 385,100 L 385,50 L 370,80 L 355,50 L 355,100 L 340,100 Z" fill="url(#loaderGrad)"/>
+        <!-- O -->
+        <path d="M 430,60 C 430,35 445,20 470,20 C 495,20 510,35 510,60 C 510,85 495,100 470,100 C 445,100 430,85 430,60 Z M 445,60 C 445,75 455,85 470,85 C 485,85 495,75 495,60 C 495,45 485,35 470,35 C 455,35 445,45 445,60 Z" fill="url(#loaderGrad)"/>
+        <!-- S -->
+        <path d="M 540,25 C 540,25 555,20 570,20 C 585,20 595,30 595,45 C 595,60 580,70 565,75 C 550,80 540,90 540,105 C 540,115 550,120 565,120 C 580,120 595,115 595,115" stroke="url(#loaderGrad)" stroke-width="12" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+          <defs>
+            <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="10" y="20" width="16" height="60" rx="8" ry="8" fill="url(#iconGrad)"/>
+          <rect x="32" y="10" width="16" height="80" rx="8" ry="8" fill="url(#iconGrad)"/>
+          <rect x="54" y="10" width="16" height="80" rx="8" ry="8" fill="url(#iconGrad)"/>
+          <rect x="76" y="20" width="16" height="60" rx="8" ry="8" fill="url(#iconGrad)"/>
+        </svg>
+        <span class="logo-text">DOKMOS</span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <h1>Bem-vindo à DOKMOS</h1>
+    <p>Este é um exemplo de página demonstrando o rebranding completo de TR3A/TROA para DOKMOS.</p>
+    <p>A nova identidade visual apresenta:</p>
+    <ul style="margin-left: 2rem; margin-bottom: 2rem; color: #555;">
+      <li>Logo vetorial SVG com barras verticais arredondadas</li>
+      <li>Cores premium: Teal (#286875) e Branco</li>
+      <li>Fonte Dokmos (substituindo TR3A)</li>
+      <li>Animação de loader com as letras D-O-K-M-O-S</li>
+    </ul>
+    
+    <div class="brand-showcase">
+      <div class="brand-card">
+        <h3>Logo Primária</h3>
+        <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(0, 15)">
+            <rect x="0" y="0" width="14" height="90" rx="7" ry="7" fill="url(#cardGrad1)"/>
+            <rect x="22" y="-10" width="14" height="110" rx="7" ry="7" fill="url(#cardGrad1)"/>
+            <rect x="44" y="-10" width="14" height="110" rx="7" ry="7" fill="url(#cardGrad1)"/>
+            <rect x="66" y="0" width="14" height="90" rx="7" ry="7" fill="url(#cardGrad1)"/>
+          </g>
+          <text x="90" y="75" font-family="'Montserrat', sans-serif" font-size="42" font-weight="700" letter-spacing="3" fill="#286875" text-transform:uppercase>DOKMOS</text>
+        </svg>
+      </div>
+      
+      <div class="brand-card" style="background: #286875;">
+        <h3 style="color: #fff;">Logo Branca</h3>
+        <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0, 15)">
+            <rect x="0" y="0" width="14" height="90" rx="7" ry="7" fill="#FFFFFF"/>
+            <rect x="22" y="-10" width="14" height="110" rx="7" ry="7" fill="#FFFFFF"/>
+            <rect x="44" y="-10" width="14" height="110" rx="7" ry="7" fill="#FFFFFF"/>
+            <rect x="66" y="0" width="14" height="90" rx="7" ry="7" fill="#FFFFFF"/>
+          </g>
+          <text x="90" y="75" font-family="'Montserrat', sans-serif" font-size="42" font-weight="700" letter-spacing="3" fill="#FFFFFF" text-transform:uppercase>DOKMOS</text>
+        </svg>
+      </div>
+      
+      <div class="brand-card">
+        <h3>Ícone</h3>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80" style="margin: 1rem auto;">
+          <defs>
+            <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="10" y="20" width="16" height="60" rx="8" ry="8" fill="url(#cardGrad2)"/>
+          <rect x="32" y="10" width="16" height="80" rx="8" ry="8" fill="url(#cardGrad2)"/>
+          <rect x="54" y="10" width="16" height="80" rx="8" ry="8" fill="url(#cardGrad2)"/>
+          <rect x="76" y="20" width="16" height="60" rx="8" ry="8" fill="url(#cardGrad2)"/>
+        </svg>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 DOKMOS. Todos os direitos reservados.</p>
+    <p>Digital Experiences Redefined</p>
+  </footer>
+</body>
+</html>

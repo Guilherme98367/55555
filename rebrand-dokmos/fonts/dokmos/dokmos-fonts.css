@@ -1,0 +1,45 @@
+/* ============================================
+   DOKMOS Font Face Definitions
+   Substitui TR3A por DOKMOS
+   ============================================ */
+
+/* DOKMOS Regular */
+@font-face {
+  font-family: 'Dokmos';
+  src: url('../fonts/dokmos/regular/dokmos-Regular.woff2') format('woff2'),
+       url('../fonts/dokmos/regular/dokmos-Regular.woff') format('woff'),
+       url('../fonts/dokmos/regular/dokmos-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* DOKMOS Medium */
+@font-face {
+  font-family: 'Dokmos';
+  src: url('../fonts/dokmos/medium/dokmos-Medium.woff2') format('woff2'),
+       url('../fonts/dokmos/medium/dokmos-Medium.woff') format('woff'),
+       url('../fonts/dokmos/medium/dokmos-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   Global Font Application
+   ============================================ */
+
+html, body {
+  font-family: 'Dokmos', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ============================================
+   DOKMOS Brand Colors
+   ============================================ */
+
+:root {
+  --dokmos-primary: #286875;
+  --dokmos-primary-light: #3d8a99;
+  --dokmos-white: #FFFFFF;
+  --dokmos-dark: #1a4a55;
+}

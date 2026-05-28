@@ -1,0 +1,37 @@
+<!-- DOKMOS Logo SVG - Para Loader/Animação (paths individuais por letra) -->
+<!-- Design: Letras D-O-K-M-O-S como paths separados para animação de entrada -->
+<!-- Uso: Animação inicial do site (loader) -->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" aria-labelledby="dokmosLoaderTitle">
+  <title id="dokmosLoaderTitle">DOKMOS Loader Animation</title>
+  <defs>
+    <linearGradient id="loaderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#286875;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3d8a99;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Letra D -->
+  <path d="M 30,20 L 70,20 C 90,20 100,35 100,60 C 100,85 90,100 70,100 L 30,100 Z M 45,35 L 45,85 L 70,85 C 80,85 85,75 85,60 C 85,45 80,35 70,35 Z" 
+        fill="url(#loaderGradient)" opacity="0.9"/>
+  
+  <!-- Letra O -->
+  <path d="M 130,60 C 130,35 145,20 170,20 C 195,20 210,35 210,60 C 210,85 195,100 170,100 C 145,100 130,85 130,60 Z M 145,60 C 145,75 155,85 170,85 C 185,85 195,75 195,60 C 195,45 185,35 170,35 C 155,35 145,45 145,60 Z" 
+        fill="url(#loaderGradient)" opacity="0.9"/>
+  
+  <!-- Letra K -->
+  <path d="M 240,20 L 255,20 L 255,50 L 285,20 L 310,20 L 270,60 L 310,100 L 285,100 L 255,70 L 255,100 L 240,100 Z" 
+        fill="url(#loaderGradient)" opacity="0.9"/>
+  
+  <!-- Letra M -->
+  <path d="M 340,20 L 355,20 L 370,50 L 385,20 L 400,20 L 400,100 L 385,100 L 385,50 L 370,80 L 355,50 L 355,100 L 340,100 Z" 
+        fill="url(#loaderGradient)" opacity="0.9"/>
+  
+  <!-- Letra O -->
+  <path d="M 430,60 C 430,35 445,20 470,20 C 495,20 510,35 510,60 C 510,85 495,100 470,100 C 445,100 430,85 430,60 Z M 445,60 C 445,75 455,85 470,85 C 485,85 495,75 495,60 C 495,45 485,35 470,35 C 455,35 445,45 445,60 Z" 
+        fill="url(#loaderGradient)" opacity="0.9"/>
+  
+  <!-- Letra S -->
+  <path d="M 540,25 C 540,25 555,20 570,20 C 585,20 595,30 595,45 C 595,60 580,70 565,75 C 550,80 540,90 540,105 C 540,115 550,120 565,120 C 580,120 595,115 595,115" 
+        stroke="url(#loaderGradient)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.9"/>
+</svg>
